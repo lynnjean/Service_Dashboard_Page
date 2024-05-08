@@ -77,8 +77,8 @@ const createChart = (url, label, backgroundColor, chartId) => {
 
 // 서비스 URL 리스트
 const serviceUrls = [
-  "https://www.books.weniv.co.kr/",
-  "https://weniv.link/",
+  "books.weniv",
+  "weniv.link",
   // 나머지 서비스 URL 추가
 ];
 
