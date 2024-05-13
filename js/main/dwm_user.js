@@ -1,5 +1,5 @@
 fetch(
-  `https://analytics.weniv.co.kr/analytics/pageviews?url=https&date_start=${previousMonthDate}&date_end=${currentDate}&interval=monthly`
+  `https://analytics.weniv.co.kr/analytics/pageviews?url=weniv&date_start=${previousMonthDate}&date_end=${currentDate}&interval=monthly`
 )
   .then((response) => response.json())
   .then((data) => {
@@ -40,7 +40,7 @@ fetch(
   .catch((error) => console.error("Error fetching MAU data:", error));
 
 fetch(
-  `https://analytics.weniv.co.kr/analytics/pageviews?url=https&date_start=${previousMonthDate}&date_end=${currentDate}&interval=weekly`
+  `https://analytics.weniv.co.kr/analytics/pageviews?url=weniv&date_start=${previousMonthDate}&date_end=${currentDate}&interval=weekly`
 )
   .then((response) => response.json())
   .then((data) => {
@@ -91,7 +91,7 @@ fetch(
   .catch((error) => console.error("Error fetching MAU data:", error));
 
 fetch(
-  `https://analytics.weniv.co.kr/analytics/pageviews?url=https&date_start=${previousMonthDate}&date_end=${currentDate}&interval = `,
+  `https://analytics.weniv.co.kr/analytics/pageviews?url=weniv&date_start=${previousMonthDate}&date_end=${currentDate}&interval = `,
   {
     method: "GET",
     headers: {

@@ -2,7 +2,7 @@ let myChart;
 const graph = (interval) => {
   // 30일 페이지뷰 데이터 (임의의 데이터입니다. 실제로는 서버에서 가져와야 합니다.)
   fetch(
-    `https://analytics.weniv.co.kr/analytics/pageviews?url=https&date_start=${previousMonthDate}&date_end=${currentDate}&interval=${interval}`, //
+    `https://analytics.weniv.co.kr/analytics/pageviews?url=weniv&date_start=${previousMonthDate}&date_end=${currentDate}&interval=${interval}`, //
     {
       method: "GET",
       headers: {
