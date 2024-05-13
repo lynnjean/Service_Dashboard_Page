@@ -79,25 +79,60 @@ const createChart = (url, label, backgroundColor, chartId) => {
 const serviceUrls = [
   "books.weniv",
   "weniv.link",
+  "world.weniv",
+  "sql.weniv",
+  "notebook.weniv",
   // 나머지 서비스 URL 추가
 ];
 
-const services = document.querySelectorAll(".card-title");
-const titlesList = [];
-
-services.forEach((service) => {
-  titlesList.push(service.textContent);
-});
+const services = [
+  "위니북스",
+  "위니링크",
+  "위니브월드",
+  "위니브SQL",
+  "위니브노트북",
+];
+const servicesContainer = document.querySelector(".row");
 
 // 서비스 URL 리스트의 각 항목에 대해 차트 생성하고 관리하는 반복문
 serviceUrls.forEach((url, index) => {
-  const label = titlesList[index];
+  const label = services[index];
   const backgroundColor = `rgba(${Math.floor(
     Math.random() * 256
   )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
     Math.random() * 256
   )}, 0.6)`;
   const chartId = `service${index + 1}Chart`;
+
+  // 새로운 카드를 생성하여 HTML에 추가
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("col-md-4");
+  cardDiv.innerHTML = `
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">${label}</h5>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              기간 설정
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Daily</a></li>
+              <li><a class="dropdown-item" href="#">Weekly</a></li>
+              <li><a class="dropdown-item" href="#">Monthly</a></li>
+            </ul>
+          </div>
+          <canvas id="${chartId}"></canvas>
+        </div>
+      </div>
+    `;
+
+  servicesContainer.appendChild(cardDiv);
 
   // 각 차트를 생성하고 관리하는 함수 호출
   createChart(url, label, backgroundColor, chartId);
