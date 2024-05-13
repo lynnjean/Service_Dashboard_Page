@@ -85,7 +85,8 @@ fetch(
         }
       }
     }
-    document.getElementById("wau").innerText = previousWeekData;
+    // console.log(previousWeekData.num);ss
+    document.getElementById("wau").innerText = previousWeekData.num;
   })
   .catch((error) => console.error("Error fetching MAU data:", error));
 
