@@ -24,12 +24,14 @@ const graph = (interval) => {
         values: values,
       };
 
-      // 차트 그리기
-      const ctx = document.getElementById("pageViewChart").getContext("2d");
       // 이전 차트 파괴
       if (myChart) {
         myChart.destroy();
       }
+
+      // 차트 그리기
+      const ctx = document.getElementById("pageViewChart").getContext("2d");
+
       myChart = new Chart(ctx, {
         type: "line",
         data: {
